@@ -2,13 +2,13 @@
 //Função para verificar se número é par, nulo ou impar
 function verificar(number) {
 if(number == 0) {
-    return("null");
+    return("null  \n \n");
 }
 else if(number % 2 == 0) {
-    return("par");
+    return("par \n \n");
 }
 else{
-    return("impar");
+    return("impar \n \n");
 }
 }
 
@@ -54,7 +54,7 @@ function media(grades) {
 
     for(let i = 0; i < grades.length; i++) {
         if(grades[i] > 10 || grades[i] < 0) {
-            console.error(grades[i] + " não é uma possível nota!!!")
+            console.error(grades[i] + `não é uma possível nota!!! \n \n`)
         }
         else {
             soma += grades[i]
@@ -65,7 +65,7 @@ function media(grades) {
     return(Math.round(m));
 }
 
-console.log(media(notas));
+console.log(media(notas) \n \n);
 
 // Calcula se valor é primo
 function epri(valor) {
@@ -84,7 +84,7 @@ function epri(valor) {
     return("true");
 }
 
-console.log("é primo: " + epri(361));
+console.log("é primo: " + epri(361) \n \n);
 
 
 let f = [[3, 4, 9], 
@@ -137,4 +137,4 @@ function e_ident(m0) {
     return("true");
 }
 
-console.log(e_ident(ident));
+console.log(e_ident(ident) \n \n);
