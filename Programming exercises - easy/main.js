@@ -163,18 +163,20 @@ console.log(bgNum + "\n \n");
 
 function counter() {
     for(let k = 0; k <= 100; k++) {
-        if(k % 3 == 0 && k % 5 == 0) {
-            console.log("Fizz Buzz \n \n");
+        //    This way Fizz Buzz can be printed in the same line without also printing Fizz and Buzz another time
+        let val = "";
+        
+        if(k % 3 == 0) {
+            val = val + "Fizz";
         }
         else if(k % 5 == 0) {
-            console.log("Buzz \n \n");
-        }
-        else if(k % 3 == 0) {
-            console.log("Fizz \n \n");
+            val = val + "Buzz";
         }
         else {
-            console.log(k + "\n \n");
+            val = val + k;
         }
+
+        console.log(val);
     }
 }
 
