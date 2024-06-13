@@ -1,4 +1,21 @@
-    //  calculates the average between numbers
+//Verifies if number is odd or par
+function verify(number: number): string|null {
+if(number == 0) {
+    return("null \n \n");
+}
+else if(number % 2 == 0) {
+    return("pair \n \n");
+}
+else{
+    return("odd \n \n");
+}
+}
+
+let userInput = prompt("Type a number: ");
+
+console.log(verify(Number(userInput)));
+
+//  calculates the average between numbers
     let notas = [4.2, 7.9, 3.6, 0.9, 2.3];
     
     function media(grades: any) {
