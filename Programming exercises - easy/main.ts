@@ -1,59 +1,51 @@
 //Verifies if number is odd or par
-function verify(number: number): string|null {
-    if (number == 0) {
+function verifyParity(number: number): string|null {
+    if (number === 0) {
         return null;
     }
-    else if (number % 2 == 0) {
-        return "pair";
-    }
-    else {
-        return "odd";
-    }
+    return number % 2 === 0 ? "pair" : "odd";
 }
 
 let userInput = prompt("Type a number: ");
 
-console.log(verify(Number(userInput)));
+console.log(verifyParity(Number(userInput)));
 
 //  calculates the average between numbers
-let notas = [4.2, 7.9, 3.6, 0.9, 2.3];
+let score = [4.2, 7.9, 3.6, 0.9, 2.3];
     
-function media(grades: number[]): number {
+function calc_avg(grades: number[]): number {
     let sum = 0;
     
     for (let i = 0; i < grades.length; i++) {
         if (grades[i] > 10 || grades[i] < 0) {
-            console.error(grades[i] + `Not a possible grade!!! \n \n`)
+            throw new Error(`${grades[i]} Isn't a possible grade!!! \n \n`)
         }
         else {
             sum += grades[i]
         }
     }
-    
-    let m = sum / grades.length;
-    return Math.round(m);
+
+    // Return the average to two decimal places.
+    return parseFloat((sum / grades.length).toFixed(2));
 }
     
-console.log(media(notas));
+console.log(calc_avg(score));
     
 // Calculates if the value is prime or not
-function isPri(val: number): boolean {
-    if (val == 1 && val % 2 == 0) {
+function isPrime(val: number): boolean {
+    if (val < 2) {
         return false;
     }
     
-    else {
-        for (let c = 2; c < val; c++) {
-    
-            if (val % c == 0) {
-                return false;  
-            }
+    for (let c = 2; c <= Math.sqrt(val); c++) {
+        if (val % c === 0) {
+            return false;  
         }
     }
     return true;
 }
     
-console.log("Prime: ", isPri(361));
+console.log("Prime: ", isPrime(361));
     
     
 const matrixA = [[3, 4, 9], 
@@ -87,7 +79,7 @@ let ident = [[5, 0, 0],
             [0, 5, 0], 
             [0, 0, 5]];
     
-function e_ident(m0: number[][]): boolean {
+function isIdentityMatrix(m0: number[][]): boolean {
     for (let l = 0; l < m0.length; l++) {
             
         for (let c = 0; c < m0.length; c++ ) {
@@ -108,7 +100,7 @@ function e_ident(m0: number[][]): boolean {
     return true;
 }
     
-console.log(e_ident(ident));
+console.log(isIdentityMatrix(ident));
     
 // Algorithm to find the biggest number in the array
 let values = [9, 11, 13];
